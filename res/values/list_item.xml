@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="menu">
+        <item>About</item>
+        <item>Login/Register</item>
+        <item>Topics</item>
+        <item>Rules</item>
+        <item>Date,Timing and Venue</item>
+        <item>Synopsis</item>
+        <item>Navigation</item>
+        <item>Contact Us</item>
+        <item>Query Us</item>
+        
+    </string-array>
+    <string-array name="domain">
+        <item>Mechanical Engineering</item>
+        <item>Computer Science and Information Technology</item>
+        <item>Electronics and Communicaton Engineering</item>
+        <item>Electrical and Electronics Engineering</item>
+        <item>Management Sciences</item>
+        
+    </string-array>
+    <string-array name="items_me">
+        <item>Application of Nano Technology in health monitory treatment</item>
+    </string-array>
+    <string-array name="items_cs">
+        <item>Green Computing</item>
+    </string-array>
+    <string-array name="items_ec">
+        <item>Graphene</item>
+    </string-array>
+    <string-array name="items_en">
+        <item>Hybrid Vehicle</item>
+    </string-array>
+    <string-array name="items_ms">
+        <item>Virtual Marketing:A need of Era</item>
+    </string-array>
+ </resources>

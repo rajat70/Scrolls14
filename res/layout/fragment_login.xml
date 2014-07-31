@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#008db8"
+    android:orientation="vertical" >
+  <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:background="#fff"
+        android:singleLine="true"
+         android:layout_marginTop="150dp" 
+         android:layout_marginLeft="20dp"
+         android:layout_marginRight="20dp"
+        />
+  <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        android:hint="Password" 
+        android:singleLine="true"
+        android:layout_marginTop="5dp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="20dp"
+         android:layout_marginRight="20dp"
+        />
+    <Button 
+        android:id="@+id/btnLogin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dp"
+         android:layout_marginRight="10dp"
+        android:text="Login"/>
+    <TextView android:id="@+id/link_to_register"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:text="New team? Register here."
+                android:gravity="center"
+                android:textColor="#000"
+                android:clickable="true"
+                android:onClick="signup"/>
+    <TextView android:id="@+id/error"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:text=""
+                android:gravity="center"
+                android:textColor="#000"
+                android:padding="5dp"
+               />  
+
+</LinearLayout>
