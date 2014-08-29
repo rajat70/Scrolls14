@@ -17,7 +17,7 @@ public class MyAdapter extends BaseExpandableListAdapter{
 	    // child data in format of header title, child title
 	    private HashMap<String, List<String>> listDataChild;
 
-	    public MyAdapter(Context context, List<String> listDataHeader,
+	    public MyAdapter(Context context,List<String> listDataHeader,
 	            HashMap<String, List<String>> listDataChild) {
 	        this.context = context;
 	        this.listDataHeader = listDataHeader;
@@ -77,12 +77,10 @@ public class MyAdapter extends BaseExpandableListAdapter{
 	                    .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 	            convertView = infalInflater.inflate(R.layout.list_header, parent,false);
 	        }
-	 
 	        TextView lblListHeader = (TextView) convertView
 	                .findViewById(R.id.lblListHeader);
 	        lblListHeader.setTypeface(null, Typeface.BOLD);
 	        lblListHeader.setText(headerTitle);
-	 
 	        return convertView;
 	}
 
