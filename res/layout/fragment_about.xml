@@ -14,7 +14,7 @@
          android:textAppearance="?android:attr/textAppearanceLarge"
          android:textSize="30dp"
          android:typeface="monospace" 
-         android:textStyle="italic"/>"
+         android:textStyle="italic"/>
 
     <View
     android:layout_width="fill_parent"

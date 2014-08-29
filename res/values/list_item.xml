@@ -22,17 +22,35 @@
     </string-array>
     <string-array name="items_me">
         <item>Application of Nano Technology in health monitory treatment</item>
+        <item>Power generation using nano-carbon tubes</item>
+        <item>Gear fault detection in gear box using oil conditioning monitoring</item>
+        <item>Improvisation during the last two decades in passenger cars</item>
+        <item>Robotic application present and future</item>
     </string-array>
     <string-array name="items_cs">
         <item>Green Computing</item>
+        <item>Embedded systems</item>
+        <item>Augmented Reality</item>
+        <item>Genetic Engineering</item>
+        <item>Cloud Computing</item>
     </string-array>
     <string-array name="items_ec">
         <item>Graphene</item>
+        <item>4G Technology</item>
+        <item>Photonics</item>
+        <item>VLSI</item>
+        <item>Nanotechnology</item>
     </string-array>
     <string-array name="items_en">
         <item>Hybrid Vehicle</item>
+        <item>Electricity Theft Detection</item>
+        <item>Wind Power Development</item>
+        <item>SCADA in Power System</item>
+        <item>Solar Power Development</item>
     </string-array>
     <string-array name="items_ms">
         <item>Virtual Marketing:A need of Era</item>
+        <item>Slide of Rupess vs Dollar-Opportunities and Challenges</item>
+        <item>Food Security Bills:Its implications to the economic growth</item>
     </string-array>
  </resources>

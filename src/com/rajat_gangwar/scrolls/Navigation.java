@@ -1,16 +1,17 @@
 package com.rajat_gangwar.scrolls;
 
 import android.app.Fragment;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class Navigation extends Fragment {
 	GoogleMap Map;
@@ -22,54 +23,30 @@ public class Navigation extends Fragment {
 				container, false);
 		MapFragment fm = (MapFragment) getFragmentManager().findFragmentById(
 				R.id.map);
-
+		
 		// Getting GoogleMap object from the fragment
 		Map = fm.getMap();
 
 		// Enabling MyLocation Layer of Google Map
 		Map.setMyLocationEnabled(true);
+		
 		// LatLng object to store user input coordinates
-		LatLng point = new LatLng(28.675751, 77.502818);
-
+		LatLng point = new LatLng(28.675751,77.502818);
+		Location current=Map.getMyLocation();
+		
 		// Drawing the marker at the coordinates
 		drawMarker(point);
+		drawRoute(current);
 		return rootView;
 	}
-
-	// protected void onCreate(Bundle arg0) {
-	// // TODO Auto-generated method stub
-	// super.onCreate(arg0);
-	// int status =
-	// GooglePlayServicesUtil.isGooglePlayServicesAvailable(getBaseContext());
-	//
-	// // Showing status
-	// if(status!=ConnectionResult.SUCCESS){ // Google Play Services are not
-	// available
-	//
-	// int requestCode = 10;
-	// Dialog dialog = GooglePlayServicesUtil.getErrorDialog(status,
-	// getParent(), requestCode);
-	// dialog.show();
-	//
-	// }else { // Google Play Services are available
-	//
-	// // Getting reference to the SupportMapFragment of activity_main.xml
-	// SupportMapFragment fm = (SupportMapFragment)
-	// getFragmentManager().findFragmentById(R.id.map);
-	//
-	// // Getting GoogleMap object from the fragment
-	// Map = fm.getMap();
-	//
-	// // Enabling MyLocation Layer of Google Map
-	// Map.setMyLocationEnabled(true);
-	//
-	// // LatLng object to store user input coordinates
-	// LatLng point = new LatLng(28.675751,77.502818);
-	//
-	// // Drawing the marker at the coordinates
-	// drawMarker(point);
-	// }
-	// }
+	private void drawRoute(Location current){
+		
+	Map.addPolyline(new PolylineOptions().geodesic(true)
+                .add(new LatLng(28.675751, 77.502818)) 
+                .add(new LatLng(current.getLatitude(),current.getLongitude()))  
+       ) ;
+	}
+	
 	private void drawMarker(LatLng point) {
 		// Clears all the existing coordinates
 		Map.clear();
@@ -94,5 +71,5 @@ public class Navigation extends Fragment {
 		Map.moveCamera(CameraUpdateFactory.newLatLngZoom(point, 15));
 
 	}
-
+	
 }

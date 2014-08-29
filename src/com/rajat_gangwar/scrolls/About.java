@@ -17,7 +17,7 @@ public class About extends Fragment {
 				container, false);
 		TextView tv_about = (TextView) rootView.findViewById(R.id.textView2);
 		Typeface tf = Typeface.createFromAsset(getActivity().getAssets(),
-				"fonts/Roboto-Thin.ttf");
+				"fonts/Roboto-Regular.ttf");
 		tv_about.setTypeface(tf);
 		return rootView;
 	}

@@ -1,82 +1,81 @@
 package com.rajat_gangwar.scrolls;
 
-import android.content.Context;
+import android.app.Fragment;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Spinner;
 
-public class Topics extends BaseExpandableListAdapter {
+public class Topics extends Fragment implements OnItemSelectedListener {
 
-	private Context context_topics;
+	
+	ListView topics;
+	Spinner spinner;
 
 	@Override
-	public int getGroupCount() {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		return 0;
+
+		View rootView = (View) inflater.inflate(R.layout.fragment_topics,
+				container, false);
+	
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+				getActivity(), R.array.domain,
+				android.R.layout.simple_spinner_item);
+		
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		
+		spinner.setAdapter(adapter);
+		spinner.setOnItemSelectedListener(this);
+		
+		return rootView;
 	}
 
+	
 	@Override
-	public int getChildrenCount(int groupPosition) {
+	public void onItemSelected(AdapterView<?> parent, View view, int position,
+			long id) {
 		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public Object getGroup(int groupPosition) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object getChild(int groupPosition, int childPosition) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public long getGroupId(int groupPosition) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public long getChildId(int groupPosition, int childPosition) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean hasStableIds() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public View getGroupView(int groupPosition, boolean isExpanded,
-			View convertView, ViewGroup parent) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public View getChildView(int groupPosition, int childPosition,
-			boolean isLastChild, View convertView, ViewGroup parent) {
-		// TODO Auto-generated method stub
-		final String childText = (String) getChild(groupPosition, childPosition);
-		if (convertView == null) {
-			LayoutInflater inflater = (LayoutInflater) this.context_topics
-					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			// convertView=inflater.inflate(resource, root)
+		ArrayAdapter<CharSequence> adapter;
+		switch (position) {
+		case 0:
+			adapter = ArrayAdapter.createFromResource(getActivity(),
+					R.array.items_me,android.R.layout.simple_list_item_1);
+			topics.setAdapter(adapter);
+			break;
+		case 1:
+			adapter = ArrayAdapter.createFromResource(getActivity(),
+					R.array.items_cs, android.R.layout.simple_list_item_1);
+			topics.setAdapter(adapter);
+			break;
+		case 2:
+			adapter = ArrayAdapter.createFromResource(getActivity(),
+					R.array.items_ec, android.R.layout.simple_list_item_1);
+			topics.setAdapter(adapter);
+			break;
+		case 3:
+			adapter = ArrayAdapter.createFromResource(getActivity(),
+					R.array.items_en, android.R.layout.simple_list_item_1);
+			topics.setAdapter(adapter);
+			break;
+		case 4:
+			adapter = ArrayAdapter.createFromResource(getActivity(),
+					R.array.items_ms, android.R.layout.simple_list_item_1);
+			topics.setAdapter(adapter);
+			break;
 		}
-		return convertView;
 
 	}
 
 	@Override
-	public boolean isChildSelectable(int groupPosition, int childPosition) {
+	public void onNothingSelected(AdapterView<?> parent) {
 		// TODO Auto-generated method stub
-		return false;
-	}
 
+	}
 }

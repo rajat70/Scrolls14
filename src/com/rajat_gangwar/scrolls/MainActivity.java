@@ -29,8 +29,7 @@ public class MainActivity extends FragmentActivity implements
 		setContentView(R.layout.activity_main);
 		list = (ListView) findViewById(R.id.drawer);
 		drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-		Fragment f = new About();
+     	Fragment f = new About();
 		FragmentManager fragmentManager = getFragmentManager();
 		fragmentManager.beginTransaction().replace(R.id.content, f).commit();
 		drawerToggle = new ActionBarDrawerToggle(this, drawer,
