@@ -36,16 +36,16 @@ public class Navigation extends Fragment {
 		
 		// Drawing the marker at the coordinates
 		drawMarker(point);
-		drawRoute(current);
+		//drawRoute(current);
 		return rootView;
 	}
-	private void drawRoute(Location current){
-		
-	Map.addPolyline(new PolylineOptions().geodesic(true)
-                .add(new LatLng(28.675751, 77.502818)) 
-                .add(new LatLng(current.getLatitude(),current.getLongitude()))  
-       ) ;
-	}
+//	private void drawRoute(Location current){
+//		
+//	Map.addPolyline(new PolylineOptions().geodesic(true)
+//                .add(new LatLng(28.675751, 77.502818)) 
+//                .add(new LatLng(current.getLatitude(),current.getLongitude()))  
+//       ) ;
+//	}
 	
 	private void drawMarker(LatLng point) {
 		// Clears all the existing coordinates

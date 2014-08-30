@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.ExpandableListView.OnGroupExpandListener;
-import android.widget.Toast;
 
 public class Topics extends Fragment {
 
@@ -33,21 +32,19 @@ public class Topics extends Fragment {
 
 		prepareListData();
 
-		listAdapter = new MyAdapter(getActivity(),listDataHeader, listDataChild);
+		listAdapter = new MyAdapter(getActivity(), listDataHeader,
+				listDataChild);
 
 		expListView.setAdapter(listAdapter);
 		expListView.setOnGroupExpandListener(new OnGroupExpandListener() {
-			 
-            @Override
-            public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getActivity(),
-                        listDataHeader.get(groupPosition) + " Expanded",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
- 		return rootView;
-		}
-	
+
+			@Override
+			public void onGroupExpand(int groupPosition) {
+
+			}
+		});
+		return rootView;
+	}
 
 	public void prepareListData() {
 		listDataHeader = new ArrayList<String>();
@@ -74,7 +71,7 @@ public class Topics extends Fragment {
 		for (int i = 0; i < items_ec.length; i++)
 			list_ec.add(items_ec[i]);
 		for (int i = 0; i < items_ms.length; i++)
-			list_ec.add(items_ms[i]);
+			list_ms.add(items_ms[i]);
 
 		listDataChild.put(listDataHeader.get(0), list_me);
 		listDataChild.put(listDataHeader.get(1), list_cs);
@@ -83,6 +80,5 @@ public class Topics extends Fragment {
 		listDataChild.put(listDataHeader.get(4), list_ms);
 
 	}
-	
-	
+
 }
