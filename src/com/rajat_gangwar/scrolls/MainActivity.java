@@ -54,8 +54,7 @@ public class MainActivity extends FragmentActivity implements
 		getActionBar().setHomeButtonEnabled(true);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		drawer.openDrawer(list);
-		list.setAdapter(new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, menu));
+		list.setAdapter(new NavListAdapter(menu,this));
 		// Set the list's click listener
 		list.setOnItemClickListener(this);
 
@@ -83,19 +82,6 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view,
 			final int position, long id) {
-		// TODO Auto-generated method stub
-		// Toast.makeText(this,menu[position],Toast.LENGTH_SHORT).show();
-		// selectitem(position);
-		// String item=menu[position];
-		//
-		// try {
-		// Class choice=Class.forName("com.example.scrolls_test2."+item);
-		// Intent newActivity=new Intent(MainActivity.this,choice);
-		// startActivity(newActivity);
-		// } catch (ClassNotFoundException e) {
-		// // TODO Auto-generated catch block
-		// e.printStackTrace();
-		// }
 		drawer.setDrawerListener(new DrawerLayout.SimpleDrawerListener() {
 			@Override
 			public void onDrawerClosed(View drawerView) {

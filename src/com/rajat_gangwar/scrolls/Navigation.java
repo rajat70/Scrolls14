@@ -1,17 +1,16 @@
 package com.rajat_gangwar.scrolls;
 
 import android.app.Fragment;
-import android.location.Location;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.PolylineOptions;
 
 public class Navigation extends Fragment {
 	GoogleMap Map;
@@ -32,7 +31,7 @@ public class Navigation extends Fragment {
 		
 		// LatLng object to store user input coordinates
 		LatLng point = new LatLng(28.675751,77.502818);
-		Location current=Map.getMyLocation();
+	//	Location current=Map.getMyLocation();
 		
 		// Drawing the marker at the coordinates
 		drawMarker(point);
